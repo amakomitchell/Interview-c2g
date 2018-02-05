@@ -1,0 +1,87 @@
+<div class="container" id="signup" [hidden]="submitted">
+    <div class="p-3 mb-2 bg-info text-center">
+      <img src="assets/svg/si-glyph-person-plus.svg" style="font-size:4px; width:5%;">
+      License Application
+    </div>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    
+    <div class="form-group">
+      <label for="type">Application Type</label>
+      <select class="form-control" id="type" required
+        [(ngModel)]="model.type" name="type">
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="score">Driver's Test Scores</label>
+      <input type="text" class="form-control" id="score" required
+        [(ngModel)]="model.score" name="score" #score="ngModel">
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="state">State of Application</label>
+          <input type="text" class="form-control" id="state" required
+            [(ngModel)]="model.state" name="state" #state="ngModel">
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><input type="radio" class="form-control" id="apptime1" required
+            [(ngModel)]="model.apptime" name="apptime" #name="ngModel"> First time</label>
+          <label><input type="radio" class="form-control" id="apptime2" required
+            [(ngModel)]="model.apptime" name="apptime" #apptime="ngModel"> Renewal</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="resaddress">Residential Address</label>
+        <input type="text" class="form-control" id="resaddress" required
+          [(ngModel)]="model.resaddress" name="resaddress" #resaddress="ngModel">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-info" [disabled]="!heroForm.form.valid">
+      <img src="assets/svg/si-glyph-paper-plane.svg" style="font-size:4px; width:6%;">
+      Submit</button>
+    <button type="button" class="btn btn-danger" (click)="newHero()">
+      Clear</button>
+  </form>
+</div>
+
+<!-- hidden div, appears when the form is submitted -->
+<div [hidden]="!submitted" class="p-3 mb-2 text-center">
+    <h2 style="text-align:center;">You submitted the following:</h2>
+    <div class="row">
+      <div class="col-sm-3">Application Type</div>
+      <div class="col-sm-3">{{ model.type }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">Test score</div>
+      <div class="col-sm-3">{{ model.score }}</div>
+      </div>
+  
+    <div class="row">
+      <div class="col-sm-3">State</div>
+      <div class="col-sm-3">{{ model.state }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">Application Time</div>
+        <div class="col-sm-3">{{ model.apptime }}</div>
+      </div>
+  
+    <div class="row">
+      <div class="col-sm-3">Residential Address</div>
+      <div class="col-sm-3">{{ model.resaddress }}</div>
+    </div>
+
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>

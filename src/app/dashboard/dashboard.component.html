@@ -1,21 +1,39 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <ul class="nav navbar-nav navbar-right">
-    <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
-  </ul>
+<!-- <app-navbar></app-navbar> -->
+
+<div class="page-header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color: #ffffff;">
+    <a class="navbar-brand" href="#">C2g</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/license-application']">Apply for License</a>
+        </li>
+      </ul>
+      <div class="navbar navbar-default navbar-fixed-top">
+        <ul class="nav navbar-nav navbar-right">
+          <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
 
-<div class="page-header"></div>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-lg-8 col-md-7 col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center">Our Awesome application</div>
-        <div class="panel-body" align="center">
-          Current User email: {{ currentUser.email }}
-        </div>
-      </div>
+<div class="container" align="center" style="margin-top:5%;">
+  <div class="card " style="width: 18rem;">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">Success!</h6>
+      <p class="card-text">Successfully logged in: {{ currentUser.email }}</p>
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

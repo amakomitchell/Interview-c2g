@@ -304,6 +304,10 @@ angular-cookies@^1.6.9:
   version "1.6.9"
   resolved "https://registry.yarnpkg.com/angular-cookies/-/angular-cookies-1.6.9.tgz#7cadddab1eda8a2fce6901d19e651be5cd320758"
 
+angular-font-awesome@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/angular-font-awesome/-/angular-font-awesome-3.1.2.tgz#9378732612d8e8c71e0d7c2faa0faddc7f858ec9"
+
 angular-passport@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/angular-passport/-/angular-passport-1.0.6.tgz#a2127052297daa7a812cf60babc27d4df4e34525"
@@ -316,6 +320,10 @@ angular-passport@^1.0.6:
     rimraf "^2.5.4"
     vinyl-buffer "^1.0.0"
     vinyl-source-stream "^1.1.0"
+
+angular2-flash-messages@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/angular2-flash-messages/-/angular2-flash-messages-2.0.5.tgz#5866c8b8df97d0d0832085febc0f2f441fe99de2"
 
 angular2-jwt@^0.2.3:
   version "0.2.3"
@@ -751,7 +759,11 @@ bootstrap-social@^5.1.1:
     bootstrap "~3"
     font-awesome "~4.7"
 
-bootstrap@^3.3.7, bootstrap@~3:
+bootstrap@^4.0.0-beta.3:
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.3.tgz#60f0660bc3d121176514b361f6f83201c7ff8874"
+
+bootstrap@~3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 

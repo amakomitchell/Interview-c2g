@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private http: AuthHttp) { 
     FB.init({
-      appId      : 'YOUR-APP-ID',
+      appId      : '145797676227766', // replace with your appID
       status     : false, // the SDK will attempt to get info about the current user immediately after init
       cookie     : false,  // enable cookies to allow the server to access
       // the session
@@ -22,16 +22,12 @@ export class UserService {
     return new Promise((resolve, reject) => {
       FB.login(result => {
         if (result.authResponse) {
-          return this.http.post(`http://localhost:3000/api/v1/auth/facebook`, {access_token: result.authResponse.accessToken})
-              .toPromise()
-              .then(response => {
-                var token = response.headers.get('x-auth-token');
-                if (token) {
-                  localStorage.setItem('id_token', token);
-                }
-                resolve(response.json());
-              })
-              .catch(() => reject());
+          FB.api('/me', {
+            fields: 'id,about,picture,birthday,email,first_name,gender,hometown,link,location,middle_name,name,timezone,website,work'
+          }, (response) => {
+            localStorage.setItem('user_profile', JSON.stringify(response));
+            resolve(response);
+          });
         } else {
           reject();
         }
@@ -40,7 +36,7 @@ export class UserService {
   }
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('user_profile');
   }
 
   isLoggedIn() {
@@ -51,9 +47,12 @@ export class UserService {
 
   getCurrentUser() {
     return new Promise((resolve, reject) => {
-      return this.http.get(`http://localhost:3000/api/v1/auth/me`).toPromise().then(response => {
-        resolve(response.json());
-      }).catch(() => reject());
+      const user = JSON.parse(localStorage.getItem('user_profile'));
+      if (user) {
+        resolve(user);
+      } else {
+        reject();
+      }
     });
   }
 

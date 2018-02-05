@@ -5,13 +5,19 @@ import { RouterModule } from '@angular/router';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { HttpModule, Http } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app-routing';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserService } from './user.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './footer/footer.component';
+// import { ValidateService } from './services/validate.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { ReviewerComponent } from './reviewer/reviewer.component';
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -27,7 +33,11 @@ export function getAuthHttp(http: Http) {
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    RegisterComponent,
+    FooterComponent,
+    ReviewerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,15 +45,17 @@ export function getAuthHttp(http: Http) {
     HttpModule,
     AlertModule.forRoot(),
     AppRouting,
-    HttpModule
+    HttpModule,
+    AngularFontAwesomeModule
   ],
   providers: [
+    FlashMessagesService,
     UserService,
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,
       deps: [Http]
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })
