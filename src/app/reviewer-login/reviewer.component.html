@@ -1,0 +1,27 @@
+<div class="container">
+  <h4>Pending Applications</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Application type</th>
+        <th scope="col">Test Score</th>
+        <th scope="col">State of Application</th>
+        <th scope="col">Application Time</th>
+        <th scope="col">Residential Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{model.id}}</th>
+        <td>{{ model.type}}</td>
+        <td>{{ model.score }}</td>
+        <td>{{ model.state }}</td>
+        <td>{{ model.apptime }}</td>
+        <td>{{ model.resaddress }}</td>
+        <td><button type="button" class="btn btn-primary">Approve</button></td>
+        <td><button type="button" class="btn btn-danger">Reject</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

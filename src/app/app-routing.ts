@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
-import { ReviewerComponent } from './reviewer/reviewer.component';
+import { ReviewerComponent } from './reviewer-login/reviewer.component';
 
 import { AuthGuard } from './authguard.guard';
 import { AnonymousGuard } from './anonymousguard.guard';

@@ -31,18 +31,20 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label><input type="radio" class="form-control" id="apptime1" required
-            [(ngModel)]="model.apptime" name="apptime" #name="ngModel"> First time</label>
-          <label><input type="radio" class="form-control" id="apptime2" required
+            [(ngModel)]="model.apptime" name="apptime" value="First time" #name="ngModel"> First time</label>
+          <label><input type="radio" class="form-control" value="Renewal" id="apptime2" required
             [(ngModel)]="model.apptime" name="apptime" #apptime="ngModel"> Renewal</label>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-6">
-      <div class="form-group">
-        <label for="resaddress">Residential Address</label>
-        <input type="text" class="form-control" id="resaddress" required
-          [(ngModel)]="model.resaddress" name="resaddress" #resaddress="ngModel">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="resaddress">Residential Address</label>
+          <input type="text" class="form-control" id="resaddress" required
+            [(ngModel)]="model.resaddress" name="resaddress" #resaddress="ngModel">
+        </div>
       </div>
     </div>
 
@@ -56,32 +58,32 @@
 
 <!-- hidden div, appears when the form is submitted -->
 <div [hidden]="!submitted" class="p-3 mb-2 text-center">
-    <h2 style="text-align:center;">You submitted the following:</h2>
-    <div class="row">
-      <div class="col-sm-3">Application Type</div>
-      <div class="col-sm-3">{{ model.type }}</div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">Test score</div>
-      <div class="col-sm-3">{{ model.score }}</div>
-      </div>
-  
-    <div class="row">
-      <div class="col-sm-3">State</div>
-      <div class="col-sm-3">{{ model.state }}</div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-3">Application Time</div>
-        <div class="col-sm-3">{{ model.apptime }}</div>
-      </div>
-  
-    <div class="row">
-      <div class="col-sm-3">Residential Address</div>
-      <div class="col-sm-3">{{ model.resaddress }}</div>
-    </div>
-
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  <h2 style="text-align:center;">You submitted the following:</h2>
+  <div class="row">
+    <div class="col-sm-3">Application Type</div>
+    <div class="col-sm-3">{{ model.type }}</div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-3">Test score</div>
+    <div class="col-sm-3">{{ model.score }}</div>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-3">State</div>
+    <div class="col-sm-3">{{ model.state }}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">Application Time</div>
+    <div class="col-sm-3">{{ model.apptime }}</div>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-3">Residential Address</div>
+    <div class="col-sm-3">{{ model.resaddress }}</div>
+  </div>
+
+  <br>
+  <button class="btn btn-primary center" (click)="submitted=false">Edit</button>
+</div>

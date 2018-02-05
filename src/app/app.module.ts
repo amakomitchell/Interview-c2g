@@ -17,7 +17,8 @@ import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 // import { ValidateService } from './services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { ReviewerComponent } from './reviewer/reviewer.component';
+import { ReviewerComponent } from './reviewer-login/reviewer.component';
+import { ReviewListComponent } from './reviewer-login/review-list/review-list.component';
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -37,7 +38,8 @@ export function getAuthHttp(http: Http) {
     NavbarComponent,
     RegisterComponent,
     FooterComponent,
-    ReviewerComponent
+    ReviewerComponent,
+    ReviewListComponent
   ],
   imports: [
     BrowserModule,
