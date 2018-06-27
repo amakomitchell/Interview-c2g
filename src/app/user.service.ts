@@ -6,7 +6,7 @@ declare const FB:any;
 
 @Injectable()
 export class UserService {
-
+  
   constructor(private http: AuthHttp) { 
     FB.init({
       appId      : '145797676227766', // replace with your appID

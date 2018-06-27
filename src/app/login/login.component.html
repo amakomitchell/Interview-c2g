@@ -1,14 +1,13 @@
-<div class="navbar navbar-default navbar-fixed-top">
-</div>
-
-<div class="page-header"></div>
-
-<div class="container" align="center" style="margin-top:5%;">
+<div class="container" align="center" style="margin-top:10%;">
   <div class="card w-50">
     <div class="card-body">
       <p class="card-text">Sign in with our Awesome Application</p>
       <button class="btn btn-md btn-social btn-facebook" (click)="fbLogin()">
         <i class="fab fa-facebook-f fb"></i> Sign in with Facebook
+      </button>
+      <p style="font-weight: bold; font-style: italic;">OR</p>
+      <button class="btn btn-md btn-social btn-google" (click)="googleLogin()">
+        <i class="fab fa-google"></i> Sign in with Google
       </button>
     </div>
   </div>
